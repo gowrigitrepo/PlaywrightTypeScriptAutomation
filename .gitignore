@@ -1,0 +1,13 @@
+
+# Playwright 
+# a leading slash indicates the root directory
+# a trailing slash specifies a directory anywhere in the project -----> Followed this
+# no leading slash is used, the pattern applies to matching files or folders anywhere
+node_modules/
+test-results/
+playwright-report/
+allure-report/
+allure-results/
+logs/
+screenshots/
+.env
