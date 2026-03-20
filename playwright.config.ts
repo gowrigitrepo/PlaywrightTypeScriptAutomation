@@ -4,9 +4,11 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+import dotenv from 'dotenv';
+//import path from 'path';
+//{ path: path.resolve(__dirname, '.env') }
+dotenv.config();
+const isCI = !!process.env.CI;
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -36,7 +38,8 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'on',//on, off, only-on-failure
     video: 'on',//on, off, retain-on-failure
-    headless : true,
+    //headless : true,
+    headless: isCI,   // true in CI, false locally
   },
 
   /* Configure projects for major browsers */

@@ -39,6 +39,7 @@ export class ProductPage {
 
   async openAddProductForm() {
     await this.addProductButton.click();
+    
     await expect(this.addProductForm).toBeVisible();
   }
 

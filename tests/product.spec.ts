@@ -4,12 +4,17 @@ import { CampaignPage } from '../pages/campaign.page';
 import { ProductPage } from '../pages/product.page';
 
 test.describe('Product Creation Flow', () => {
-
+  const username = process.env.TEST_USERNAME || '';
+  const password = process.env.TEST_PASSWORD || '';
   test('Valid Login', async ({ page }) => {
     const loginPage = new LoginPage(page);
     // Login
     await loginPage.goto();
-    await loginPage.login('rmgyantra', 'rmgy@9999');
+    await page.screenshot({
+      path: 'screenshots/homepage.png',
+      fullPage: true,
+    });
+    await loginPage.login(username, password);
 
   })
 
@@ -21,7 +26,7 @@ test.describe('Product Creation Flow', () => {
 
     // Login
     await loginPage.goto();
-    await loginPage.login('rmgyantra', 'rmgy@9999');
+    await loginPage.login(username, password);
 
     // Navigate to Products
     await campaignPage.openProducts();

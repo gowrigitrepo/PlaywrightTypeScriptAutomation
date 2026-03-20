@@ -18,9 +18,9 @@ export class LoginPage {
     await this.page.goto('/');
   }
 
-  async login(user: string, pass: string): Promise<void> {
-    await this.username.fill(user);
-    await this.password.fill(pass);
+  async login(usernam: string, passwrd: string): Promise<void> {
+    await this.username.fill(usernam);
+    await this.password.fill(passwrd);
     await this.loginButton.click();
   }
 }

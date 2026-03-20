@@ -34,6 +34,9 @@ jobs:
 
     # 5. Run UI + API tests
     - name: Run Playwright Tests
+    env:
+          USERNAME: ${{ secrets.TEST_USERNAME }}
+          PASSWORD: ${{ secrets.TEST_PASSWORD }}
       run: npx playwright test
       continue-on-error: true   # ensures reports generate even if tests fail
 
