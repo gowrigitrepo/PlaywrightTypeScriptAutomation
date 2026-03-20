@@ -63,7 +63,7 @@ jobs:
       if: always()
       with:
         name: screenshots
-        path: src/screenshots/
+        path: screenshots/
 
     # 9. Upload Winston Logs
     - name: Upload Logs
