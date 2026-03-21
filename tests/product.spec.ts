@@ -18,6 +18,21 @@ test.describe('Product Creation Flow', () => {
 
   })
 
+    test('Navigate To products', async ({ page }) => {
+
+    const loginPage = new LoginPage(page);
+    const campaignPage = new CampaignPage(page);
+    const productPage = new ProductPage(page);
+
+    // Login
+    await loginPage.goto();
+    await loginPage.login(username, password);
+
+    // Navigate to Products
+    await campaignPage.openProducts();
+
+    })
+
   test('Create product', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
